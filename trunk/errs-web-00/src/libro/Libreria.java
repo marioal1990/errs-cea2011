@@ -30,16 +30,14 @@ public class Libreria extends HttpServlet{
 			PrintWriter writer = response.getWriter();
 			writer.println("<html>" + "<body>" + "<h1>LISTADO DE LIBROS</h1>");
 
-			Connection conexion;
 			Statement s;
 			ResultSet rs;
-			Class.forName("com.mysql.jdbc.Driver");
-			conexion = DriverManager.getConnection("jdbc:mysql://localhost/libreria", "root", "root");
+			Connection conexion = (Connection) request.getSession().getAttribute("conexion");			
 			s = conexion.createStatement();
 			rs = s.executeQuery("select * from libros");
 			List<Autor> autores = new ArrayList<Autor>(); 
 			List<Libros> libros = new ArrayList<Libros>();
-			Autor a= new Autor();
+			
 			while (rs.next()){
 				    
 				    autores.add(new Autor(rs.getInt(1), rs.getString(2), rs.getDate(3)));
@@ -47,15 +45,36 @@ public class Libreria extends HttpServlet{
 			rs = s.executeQuery("select * from libros");
 			while (rs.next()){			
 
-				libros.add(new Libros(rs.getInt(1), rs.getString(2), rs.getDate(3),a.buscarAutor(rs.getInt(4))));
+				libros.add(new Libros(rs.getInt(1), rs.getString(2), rs.getDate(3),buscarAutor(rs.getInt(4))));
 			}
 			for (Libros element:libros){
 			writer.println(element.getTitulo()+" <a href=\"./LibroDetail?id="+element.getId()+"\">[Detallar]</a>  <a href=\"./LibroEdit?id="+element.getId()+"\">[Editar]</a><br />");
 			}
 			writer.println("</body>\n" + "</html>\n");	
-			conexion.close();
 		} catch (Exception e){
 		   e.printStackTrace();
 		} 
+	}
+		public Autor buscarAutor(int idAutor) {
+			Connection conexion;
+			Statement s;
+			ResultSet rs;
+
+			try {
+
+				Class.forName("com.mysql.jdbc.Driver");
+				conexion = DriverManager.getConnection(
+						"jdbc:mysql://localhost/libreria", "root", "root");
+				s = conexion.createStatement();
+				rs = s.executeQuery("select * from autores");
+
+				while (rs.next())
+					if (idAutor == Integer.parseInt(rs.getString(1)))
+						return new Autor(rs.getInt(1), rs.getString(2),rs.getDate(3));
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
 	}
 	}

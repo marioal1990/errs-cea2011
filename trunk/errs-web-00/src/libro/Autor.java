@@ -41,27 +41,5 @@ public class Autor {
 		return "Autor [id=" + id + ", nombre=" + nombre + ", fechaNacimiento="
 				+ fechaNacimiento + "]<br/>\n";
 	}
-	public Autor buscarAutor(int idAutor) {
-		Connection conexion;
-		Statement s;
-		ResultSet rs;
-
-		try {
-
-			Class.forName("com.mysql.jdbc.Driver");
-			conexion = DriverManager.getConnection(
-					"jdbc:mysql://localhost/libreria", "root", "root");
-			s = conexion.createStatement();
-			rs = s.executeQuery("select * from autores");
-
-			while (rs.next())
-				if (idAutor == Integer.parseInt(rs.getString(1)))
-					return new Autor(rs.getInt(1), rs.getString(2),rs.getDate(3));
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-
-	}
+	
 }

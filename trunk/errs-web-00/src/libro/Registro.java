@@ -21,8 +21,8 @@ public class Registro extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession ses = request.getSession();
-		if (request.getParameter("nombreUsuario").equals("Admin")
-				&& request.getParameter("claveUsuario").equals("Admin")) {
+		if (request.getParameter("nombreUsuario").equals("Rocio")
+				&& request.getParameter("claveUsuario").equals("Rocio")) {
 			
 			ses.setAttribute("nombreAdmin",
 					request.getParameter("nombreUsuario"));
@@ -36,7 +36,7 @@ public class Registro extends HttpServlet {
 			{
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
-					Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/libreria","java", "java");
+					Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/libreria","root", "root");
 					ses.setAttribute("conexion", conexion);
 				} catch (ClassNotFoundException | SQLException e) {
 					
@@ -47,19 +47,11 @@ public class Registro extends HttpServlet {
 			
 		} else {
 			PrintWriter writer = response.getWriter();
-			writer.println("<!DOCTYPE html>\n"
-					+ "<html>\n"
-					+ "<head>\n"
-					+ "<meta charset=\"ISO-8859-1\">\n"
-					+ "<title>Nuevo Libro</title>\n"
-					+ "</head>\n"
-					+ "<body>\n"
+			writer.println("<!DOCTYPE html>\n"+ "<html>\n"+ "<head>\n"+ "<meta charset=\"ISO-8859-1\">\n"
+					+ "<title>Nuevo Libro</title>\n"+ "</head>\n"+ "<body>\n"
 					+ "<h2>Login</h2><br /><form name=\"registro\" action=\"./Registro\">"
-					+ "<ul>"
-					+ "<li><span>Nombre </span><input type=\"text\" name=\"nombreUsuario\" /></li>"
-					+ "<li><span>Clave </span><input type=\"password\" name=\"claveUsuario\"/></li>"
-					+ "</ul>" + "<input type=\"submit\" value=\"Enviar\" />"
-					+ "</form><br />Usuario/Contrase&ntilde;a incorrecta");
+					+ "<ul>"+ "<li><span>Nombre </span><input type=\"text\" name=\"nombreUsuario\" /></li>"+ "<li><span>Clave </span><input type=\"password\" name=\"claveUsuario\"/></li>"
+					+ "</ul>" + "<input type=\"submit\" value=\"Enviar\" />"+ "</form><br />Usuario/Contrase&ntilde;a incorrecta");
 			writer.println("</body>\n" + "</html>\n");
 		}
 	}

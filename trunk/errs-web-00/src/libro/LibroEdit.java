@@ -23,11 +23,10 @@ public class LibroEdit extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try{
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/libreria","root", "root");
+			Connection conexion = (Connection) request.getSession().getAttribute("conexion");			
+
 		Statement s = conexion.createStatement();
 		
-		Autor a= new Autor();
 		ResultSet rs= s.executeQuery("select * from autores");
 		List<Autor> listaAutor = new ArrayList<Autor>(); 
 		PrintWriter writer = response.getWriter();
@@ -40,7 +39,7 @@ public class LibroEdit extends HttpServlet {
 		List<Libros> listaLibro = new ArrayList<Libros>();
 		
 		while (rs.next())
-			listaLibro.add(new Libros(rs.getInt(1), rs.getString(2), rs.getDate(3), a.buscarAutor(rs.getInt(4))));
+			listaLibro.add(new Libros(rs.getInt(1), rs.getString(2), rs.getDate(3), buscarAutor(rs.getInt(4))));
 		
 		writer.println("`Detalle del libro seleccionado´<br />");
 		writer.println("" + "<form method=\"get\" action=\"LibroEditProcess\">" +"<ul>");
@@ -53,18 +52,41 @@ public class LibroEdit extends HttpServlet {
 			writer.println("<input type=\"hidden\" name=\"titulo\" value=\"+ element.getNombre() +\">"+
 					"<li><input type=\"text\" name=\"nombre\" value=\""+element.getAutor()+"\" /></li>");
 		}
+		writer.println("" +"</ul>" +"</form>" +"<br /><a href=\"./LibroEditProcess\">[Aceptar]</a> ");
 		writer.println("" +"</ul>" +"</form>" +"<br /><a href=\"./Libros\">[Volver]</a> ");
 		writer.println("</body>\n" +"</html>\n");	
 		writer.close();
-		conexion.close();
 	} catch (Exception e){
 	   e.printStackTrace();
 	} 
 	}
+	public Autor buscarAutor(int idAutor) {
+		Connection conexion;
+		Statement s;
+		ResultSet rs;
+
+		try {
+
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection(
+					"jdbc:mysql://localhost/libreria", "root", "root");
+			s = conexion.createStatement();
+			rs = s.executeQuery("select * from autores");
+
+			while (rs.next())
+				if (idAutor == Integer.parseInt(rs.getString(1)))
+					return new Autor(rs.getInt(1), rs.getString(2),rs.getDate(3));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 	}
 
 }
