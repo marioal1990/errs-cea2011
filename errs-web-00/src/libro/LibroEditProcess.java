@@ -27,6 +27,7 @@ public class LibroEditProcess extends HttpServlet {
 	
 		try
 		{
+			
 			HttpSession ses = request.getSession();
 			Object o = ses.getAttribute("nombreAdmin");			
 			Connection conexion = (Connection) ses.getAttribute("conexion");			
@@ -47,7 +48,6 @@ public class LibroEditProcess extends HttpServlet {
 			writer.println("<a href=\"./LibroDetail?id=" + Integer.parseInt(request.getParameter("id")) + "\">[Mostra libro modificado]</a> " +"<br /><a href=\"./Libros\">[Listar todos los libros]</a>");
 			writer.println("</body>\n" +"</html>\n");	
 			writer.close();
-			conexion.close();
 		} catch (Exception e){
 		   e.printStackTrace();
 		} 
@@ -55,7 +55,7 @@ public class LibroEditProcess extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 	}
 	
 }

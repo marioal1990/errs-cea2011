@@ -28,16 +28,14 @@ public class LibroDetail extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection conexion = DriverManager.getConnection(
-					"jdbc:mysql://localhost/libreria", "root", "root");
+			Connection conexion = (Connection) request.getSession().getAttribute("conexion");			
 			Statement s = conexion.createStatement();
 
 			PrintWriter writer = response.getWriter();
 			writer.println("<html><head><h1>DETALLE DE LIBRO</h1></head><body>");
 			ResultSet rs = s.executeQuery("select * from autores");
 			List<Autor> autores = new ArrayList<Autor>();
-			Autor a= new Autor();
+		
 			while (rs.next()) {
 
 				autores.add(new Autor(rs.getInt(1), rs.getString(2), rs.getDate(3)));
@@ -46,7 +44,7 @@ public class LibroDetail extends HttpServlet {
 			List<Libros> libros = new ArrayList<Libros>();
 			Integer nombre = 0;
 			while (rs.next()) {
-				libros.add(new Libros(rs.getInt(1), rs.getString(2), rs.getDate(3),a.buscarAutor(rs.getInt(4))));
+				libros.add(new Libros(rs.getInt(1), rs.getString(2), rs.getDate(3),buscarAutor(rs.getInt(4))));
 				nombre = rs.getInt(4);
 			}
 
@@ -59,14 +57,32 @@ public class LibroDetail extends HttpServlet {
 			}
 			writer.println("<a href=\"./Libros\">[Volver]</a>");
 			writer.println("</body>\n" + "</html>\n");
-			writer.close();
-		} catch (ClassNotFoundException e) {
-
-			e.printStackTrace();
 		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
+	}
+	public Autor buscarAutor(int idAutor) {
+		Connection conexion;
+		Statement s;
+		ResultSet rs;
+
+		try {
+
+			Class.forName("com.mysql.jdbc.Driver");
+			conexion = DriverManager.getConnection(
+					"jdbc:mysql://localhost/libreria", "root", "root");
+			s = conexion.createStatement();
+			rs = s.executeQuery("select * from autores");
+
+			while (rs.next())
+				if (idAutor == Integer.parseInt(rs.getString(1)))
+					return new Autor(rs.getInt(1), rs.getString(2),rs.getDate(3));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 
 	}
 }
