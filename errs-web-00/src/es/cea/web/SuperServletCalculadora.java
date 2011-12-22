@@ -24,6 +24,11 @@ public class SuperServletCalculadora extends HttpServlet {
 		String operador2 = request.getParameter("operador2");
 		String operador = request.getParameter("operacion");
 		
+		System.out.println("CALCULADORA");
+		System.out.println("Operador 1: " + operador1 );
+		System.out.println("Operador 2: " + operador2 );
+		System.out.println("Operador: " + operador);
+		
 		PrintWriter writer = response.getWriter();
 		
 		if (operador.equals("suma")) {
@@ -47,7 +52,8 @@ public class SuperServletCalculadora extends HttpServlet {
 
 			writer.println("El resultado es: " + res);
 		}
-
+		
+		
 		writer.close();
 	}
 
