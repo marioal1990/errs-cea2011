@@ -1,8 +1,12 @@
 import java.sql.* ;  
+
+import org.testng.annotations.Test;
 public class InsertarBDLibrerias {
 	
-	public static void main (String [] args)
-	{
+	@Test
+
+		public void metodo(){
+			
 		try  
 		{  
 			Class.forName("com.mysql.jdbc.Driver");  
@@ -42,4 +46,5 @@ public class InsertarBDLibrerias {
 		   e.printStackTrace();  
 		}   
 	}
+	
 }
