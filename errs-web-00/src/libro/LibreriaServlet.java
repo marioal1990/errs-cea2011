@@ -18,14 +18,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.testng.annotations.Test;
 @WebServlet("/Libros")
-public class Libreria extends HttpServlet{
+public class LibreriaServlet extends HttpServlet{
 
 
 	private static final long serialVersionUID = 1L;
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try
+		
+		List<Stat> estadisticas=(List<Stat>) request.getSession().getAttribute("estadisticas");
+		Stat visita = new Stat("/libros", 1);
+		estadisticas.add(visita);
+		
+		List<Stat>estadisticaContexto = (List<Stat>) request.getServletContext().getAttribute("estadisticas");
+		Stat visitaContexto = new Stat("/libros",1);
+		estadisticaContexto.add(visitaContexto);
+		
+ 		try
 		{
 			PrintWriter writer = response.getWriter();
 			writer.println("<html>" + "<body>" + "<h1>LISTADO DE LIBROS</h1>");

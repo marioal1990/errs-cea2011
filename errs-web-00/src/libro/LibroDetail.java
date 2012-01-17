@@ -26,6 +26,10 @@ public class LibroDetail extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		List<Stat> estadisticas=(List<Stat>) request.getSession().getAttribute("estadisticas");
+		
+		Stat visita = new Stat("/libroDetail", 1);
+		estadisticas.add(visita);
 
 		try {
 			Connection conexion = (Connection) request.getSession().getAttribute("conexion");			
