@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/j2ee/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>simpleTag</short-name>
+	<description>color a mensaje</description>
+	<tag>
+	<name>form</name>
+	<tag-class>es.cea.tags.FormTag</tag-class>
+	<body-content>JSP</body-content>
+	<attribute>
+	<name>action</name>
+	<type>String</type>
+	</attribute>
+	</tag>
+	<tag>
+	<name>menu</name>
+	<tag-class>es.cea.tags.MenuTag</tag-class>
+	</tag>
+	<tag>
+	<name>inputText</name>
+	<tag-class>es.cea.tags.InputTextTag</tag-class>
+	<body-content>empty</body-content>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>String</type>
+		</attribute>
+	</tag>
+	<tag>
+	<name>debugRequest</name>
+	<tag-class>es.cea.tags.DebugRequestTag</tag-class>
+	<body-content>empty</body-content>
+		
+	</tag>
+	<tag>
+	<name>enlaceGoogleTag</name>
+	<tag-class>es.cea.tags.EnlaceGoogleTag</tag-class>
+	<body-content>empty</body-content>
+		<attribute>
+			<name>textoEnlace</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>String</type>
+		</attribute>
+	</tag>
+	<tag>
+	<name>imagen</name>
+	<tag-class>es.cea.tags.ImagenTag</tag-class>
+	<body-content>empty</body-content>
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>Object</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>simpleTag</name>
+		<tag-class>es.cea.tags.SimpleTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>color</name>
+			<required>no</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>mensaje</name>
+			<required>no</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>enlaceGoogle</name>
+		<tag-class>es.cea.tags.EnlaceGoogleTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	
+	<tag>
+		<name>tablita</name>
+		<tag-class>es.cea.tags.TablitaTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>celdas</name>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>formRegistro</name>
+		<tag-class>es.cea.tags.RegistroTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>action</name>
+		</attribute>
+	
+		<attribute>
+			<name>method</name>
+		</attribute>
+	
+	</tag>
+	
+	<tag>
+		<name>formTag</name>
+		<tag-class>eticom.discografica.etiquetas.FormTag</tag-class>
+		<body-content>tagdependent</body-content>
+	</tag>
+	<tag>
+		<name>inputTag</name>
+		<tag-class>eticom.discografica.etiquetas.InputTag</tag-class>
+		<body-content>tagdependent</body-content>
+		<attribute>
+			<name>name</name>
+			<required>yes</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>yes</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>yes</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+
+</taglib>
