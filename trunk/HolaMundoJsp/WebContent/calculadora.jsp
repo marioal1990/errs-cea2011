@@ -23,3 +23,5 @@ RESULTADO:<%=res.getResultado() %><br></BR>
 
 </body>
 </html>
+
+
