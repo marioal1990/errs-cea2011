@@ -5,11 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
+<title>Contacto Modificado</title>
 </head>
 <body>
-<h2>El contacto ha sido borrado</h2><br></br>
-<br></br>
-<a href='agenda'> Volver </a>
+<h2>El Contacto ha sido Modificado Ok</h2>
+<a href='./agenda'>Volver</a>
 </body>
 </html>
