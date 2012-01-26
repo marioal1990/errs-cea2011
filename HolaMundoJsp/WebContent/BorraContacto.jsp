@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<%@page import="es.cea.agendatelefonica.ContactoTel"%>
-<%@page import="es.cea.agendatelefonica.Agenda"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>  
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"  
+    pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -14,22 +13,21 @@
 <body>
 	<h2>¿Estas seguro de borrar contacto?</h2>
 	Contacto:
-	<%
-		
-		String nombre = request.getParameter("nombre");
-	%>
-	<%=nombre%>
+	
+	${requestScope.nombre}	
+	${param.nombre}
+	
 	<br>Teléfono: 
-	<%
-		String telefono = request.getParameter("telefono");
-	%>
-		 <%=telefono%>
+	
+	${requestScope.telefono}
+	${param.telefono}
+		 
 	
 
 <form method="get" name="OK"  action="./BorrarContactoServlet">
 
-<INPUT type="hidden" value="<%=nombre %>" name="nombre"/>
-<INPUT type="hidden" value="<%=telefono %>" name="telefono"/>
+<INPUT type="hidden" value="${param.nombre}" name="nombre"/>
+<INPUT type="hidden" value="${param.telefono}" name="telefono"/>
 	<input type="submit" name="OK" value="OK">
 </form><br>
 <a href="./agenda"> </a>
