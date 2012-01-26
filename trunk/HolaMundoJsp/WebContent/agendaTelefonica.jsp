@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
+<%@page import="es.cea.agendatelefonica.Agenda"%>
 <%@page import="es.cea.agendatelefonica.ContactoTel"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -7,27 +8,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Agenda telefonica</title>
+<title>Agenda Telefónica</title>
 </head>
 <body>
 <h1>AGENDA TELEFÓNICA</h1>
 <HR></HR>
 <ul>
-<%
-List<ContactoTel>contactos=(List)request.getAttribute("contactos");
+<%Agenda agenda = (Agenda) request.getSession().getServletContext().getAttribute("agenda");
 
-for(ContactoTel contacto:contactos){
-%>
+for(ContactoTel contacto:agenda.contactos){%>	
 <li><%=contacto.getNombre()%>: <%=contacto.getTelefono()%>
-<a href='modificar?nombre=<%=contacto.getNombre()%>'> [Modificar]</a><a href='borrar?nombre=<%=contacto.getNombre()%>'>[Borrar]</a><br></br>
 
-</li> 
-
-<%	
+<a href='./PreguntarModificarServlet?nombre=<%=contacto.getNombre()%>&telefono=<%=contacto.getTelefono() %>' >[Modificar]</a>
+<a href='./PreguntarBorrarServlet?nombre=<%=contacto.getNombre()%>&telefono=<%=contacto.getTelefono() %>' >[Borrar]</a>
+</li>
+<%
 }
 %>
 </ul>
-<a href='nuevo'> Nuevo </a>
+<a href='./PreguntarIncluirContactoServlet' >[Añadir Contacto]</a>
+
 
 </body>
 </html>
