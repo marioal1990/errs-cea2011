@@ -26,11 +26,42 @@ html {overflow-x:hidden;}
 	<div id="holder">
 	<!--BEGIN OF TERMS OF USE. DO NOT EDIT OR DELETE THESE LINES. IF YOU EDIT OR DELETE THESE LINES AN ALERT MESSAGE MAY APPEAR WHEN TEMPLATE WILL BE ONLINE-->
 	<div id="copy" style="height: 75px; position: absolute; bottom: 0px; left:0px; border: none; width: 100%;">
-		<div id="free-flash-header" style="width:820px;margin:0 auto;text-align:right;position:relative;bottom:0px;margin-top:63px;color:#C2CAE0;font-size:10px;font-family:Verdana"><strong>plantillas web</strong> en <a href="http://www.freeplantillas.com/"><strong>plantillas web</strong></a></div>																			 
+		<div id="free-flash-header" style="width:820px;margin:0 auto;text-align:right;position:relative;bottom:0px;margin-top:63px;color:#C2CAE0;font-size:10px;font-family:Verdana"><strong>Emilia del Rocío Rísquez Solares</strong> <a href="http://www.freeplantillas.com/"></a></div>																			 
 	</div>	
 	<!--END OF TERMS OF USE-->		
-	<div id="header">				
-		<img src="images/web.jpg" style="width:850px; height:200px;">		
-																																																																																																																																																																																																																																																																																																																																																																																																						
+	<div id="header" style="width:850px; height:150px;background-image: url(images/web.jpg);">	
+																 																																																																																																																																																																																																																																																																																																																																																																																					
   </div>
+  
+  <div id="menu">
+	<ul>
+		<li class="active"><a href="agenda"title="" onMouseOver="playSound(0)" onMouseOut="stopSound(0)">Home</a></li>
+		<li><a href="agenda" title="" onMouseOver="playSound(0)" onMouseOut="stopSound(0)">EXIT</a></li>
+		
+	</ul>
+</div>
+
+	<div id="content">
+
+	  <div id="left">
+						<br/>
+						<h1>News and Events </h1>
+						<img src="images/free-flash-templates.jpg" style="margin-bottom:5px;">
+						
+						<span class="blue">26/01/2012 - Creación</span>
+						<br/>
+						<br/>
+		  			
+		  			<br/>
+						
+<br/>
+<br/>
+	  </div>
+			<br/>
+			<div id="right"><h1>Company profile</h1><span class="blue"></span>
+				<br/>
+				<img src="images/cerises.jpg" align="right" style="margin-left:10px" title=""><h1>AGENDA TELEFÓNICA</h1>
+<HR></HR>
+<ul>
+  
 </body>
