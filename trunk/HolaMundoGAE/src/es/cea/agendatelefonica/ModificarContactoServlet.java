@@ -32,7 +32,9 @@ public class ModificarContactoServlet extends HttpServlet {
 		EntityTransaction transaction = entityManager.getTransaction();
 
 		transaction.begin();
-		Query query = entityManager.createQuery("SELECT from ContactoTel where id="+ request.getParameter("id")); 
+		Query query = entityManager.createQuery("SELECT contacto from ContactoTel contacto where contacto.nombre=:nombreBusqueda and contacto.telefono=:jhjh");
+		query.setParameter("nombreBusqueda", request.getParameter("nombreAntiguo"));
+		query.setParameter("jhjh", request.getParameter("tel"));
 		ContactoTel contactoTel = (ContactoTel) query.getSingleResult();
 
 		request.setAttribute("contacto", contactoTel);

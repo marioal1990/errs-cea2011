@@ -25,7 +25,7 @@ public class AgendaServlet extends HttpServlet {
 	//ABRIMOS LA TRANSACCION
 	EntityTransaction transaction = entityManager.getTransaction();
 	transaction.begin();
-
+	
 	String jpql = "select contactoTel from ContactoTel contactoTel";
 	List<ContactoTel> contactos = entityManager.createQuery(jpql).getResultList();
 	
