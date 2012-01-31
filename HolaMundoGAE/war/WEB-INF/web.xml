@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>AgendaServlet</servlet-name>
+		<servlet-class>es.cea.agendatelefonica.AgendaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AgendaServlet</servlet-name>
+		<url-pattern>/agenda</url-pattern>
+	</servlet-mapping>
+		
+	
+	<servlet>
+		<servlet-name>BorrarContactoServlet</servlet-name>
+		<servlet-class>es.cea.agendatelefonica.BorrarContactoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BorrarContactoServlet</servlet-name>
+		<url-pattern>/BorrarContactoServlet</url-pattern>
+	</servlet-mapping>
+		
+	
+	<servlet>
+		<servlet-name>IncluirContactoServlet</servlet-name>
+		<servlet-class>es.cea.agendatelefonica.IncluirContactoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IncluirContactoServlet</servlet-name>
+		<url-pattern>/IncluirContactoServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>ModificarContactoServlet</servlet-name>
+		<servlet-class>es.cea.agendatelefonica.ModificarContactoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModificarContactoServlet</servlet-name>
+		<url-pattern>/ModificarContactoServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>PreguntarBorrarServlet</servlet-name>
+		<servlet-class>es.cea.agendatelefonica.PreguntarBorrarServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PreguntarBorrarServlet</servlet-name>
+		<url-pattern>/PreguntarBorrarServlet</url-pattern>
+	</servlet-mapping>
+	
+		
+	<servlet>
+		<servlet-name>PreguntarIncluirContactoServlet</servlet-name>
+		<servlet-class>es.cea.agendatelefonica.PreguntarIncluirContactoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PreguntarIncluirContactoServlet</servlet-name>
+		<url-pattern>/PreguntarIncluirContactoServlet</url-pattern>
+	</servlet-mapping>
+		
+	
+	<servlet>
+		<servlet-name>PreguntarModificarServlet</servlet-name>
+		<servlet-class>es.cea.agendatelefonica.PreguntarModificarServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PreguntarModificarServlet</servlet-name>
+		<url-pattern>/PreguntarModificarServlet</url-pattern>
+	</servlet-mapping>
+	
+	<listener>
+	<listener-class>es.cea.agendatelefonica.ListenerContextAgenda</listener-class>
+	</listener>
+	
+	<listener>
+	<listener-class>es.cea.agendatelefonica.ListenerSesionAgenda</listener-class>
+	</listener>
+	
+</web-app>
