@@ -16,6 +16,7 @@
 <INPUT type="text" value="nombre" name="nombre"/>
 <INPUT type="text" value="telefono" name="telefono"/>
 
+
 <input type="submit" name="OK" value="OK">
 </form><br>
 

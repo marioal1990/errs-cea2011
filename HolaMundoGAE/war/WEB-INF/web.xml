@@ -13,6 +13,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/agenda</url-pattern>
 	</servlet-mapping>
 		
+	<servlet>
+		<servlet-name>NuevaAgenda</servlet-name>
+		<servlet-class>es.cea.agendatelefonica.CreaAgendaNueva</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NuevaAgenda</servlet-name>
+		<url-pattern>/nuevaAgenda</url-pattern>
+	</servlet-mapping>
+		
 	
 	<servlet>
 		<servlet-name>BorrarContactoServlet</servlet-name>

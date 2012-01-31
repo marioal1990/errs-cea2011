@@ -35,14 +35,14 @@ public class IncluirContactoServlet extends HttpServlet {
 		
 		contactoNuevo.setNombre(request.getParameter("nombre"));
 		contactoNuevo.setTelefono(request.getParameter("telefono"));
-		
+		Agenda agenda=entityManager.find(Agenda.class, new Long(2));
+		contactoNuevo.setAgenda(agenda);
 		transaction.begin();
 		entityManager.persist(contactoNuevo);
-//		entityManager.persist(new ContactoTel("Dario", "123456"));
+
 		transaction.commit();
 
-		
-		
+				
 		//SE VA A LA VISTA INCLUIDO.JSP
 		request.getRequestDispatcher("incluido.jsp").forward(request, response);
 	

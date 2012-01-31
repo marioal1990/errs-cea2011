@@ -16,11 +16,7 @@
 </ul>
 <a href='./PreguntarIncluirContactoServlet' >[Añadir Contacto]</a>
 				
-				
-				
-				
-			
-	    <div style="clear: both;"></div>
+<div style="clear: both;"></div>
 </div>
 <div id="footer">
 	<p>Copyright &copy; 2012 YOUR COMPANY.</p>

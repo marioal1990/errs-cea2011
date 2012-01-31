@@ -11,8 +11,8 @@ import com.google.appengine.api.datastore.Key;
 @Entity
 public class ContactoTel {
 	Key id;
-	 String nombre;
-	 String telefono;
+	String nombre;
+	String telefono;
 	Agenda agenda;
 	
 	public ContactoTel(String string, String string2) {
@@ -46,7 +46,7 @@ public class ContactoTel {
 		this.telefono = telefono;
 	}
 	
-	@ManyToOne
+	@ManyToOne()
 	public Agenda getAgenda() {
 		return agenda;
 	}
