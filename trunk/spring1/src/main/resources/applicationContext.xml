@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="miBean" class="com.enjava.Dependencia" >
+		<!-- collaborators and configuration for this bean go here -->
+	</bean>
+
+	<bean id="miBean2" class="com.enjava.Servicio" >
+		<property name="dependencia" ref="miBean"></property>
+	</bean>
+	
+	<bean id="miBeanPI" class="periodico.EuroNews" >
+		<!-- collaborators and configuration for this bean go here -->
+	</bean>
+	<bean id="miBeanPI2" class="periodico.PeriodicoInternacional" >
+		<property name="euroNews" ref="miBeanPI"></property>
+	</bean>
+	
+	<bean id="miBeanPN" class="periodico.DiarioSevilla" >
+		<!-- collaborators and configuration for this bean go here -->
+	</bean>
+	<bean id="miBeanPN2" class="periodico.PeriodicoNacional" >
+		<property name="diarioSevilla" ref="miBeanPN"></property>
+	</bean>
+	<!-- more bean definitions go here -->
+
+</beans>

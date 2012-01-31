@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="377" started-at="2012-01-31T20:40:42Z" finished-at="2012-01-31T20:40:42Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="377" started-at="2012-01-31T20:40:42Z" finished-at="2012-01-31T20:40:42Z">
+      <class name="com.enjava.TestApplication">
+        <test-method status="PASS" signature="pruebaInyeccionDep()[pri:0, instance:com.enjava.TestApplication@1ecda50]" name="pruebaInyeccionDep" duration-ms="310" started-at="2012-01-31T20:40:42Z" finished-at="2012-01-31T20:40:42Z">
+        </test-method>
+        <test-method status="PASS" signature="pruebaPeriodicoIntenacional()[pri:0, instance:com.enjava.TestApplication@1ecda50]" name="pruebaPeriodicoIntenacional" duration-ms="31" started-at="2012-01-31T20:40:42Z" finished-at="2012-01-31T20:40:42Z">
+        </test-method>
+        <test-method status="PASS" signature="pruebaPeriodicoNacional()[pri:0, instance:com.enjava.TestApplication@1ecda50]" name="pruebaPeriodicoNacional" duration-ms="22" started-at="2012-01-31T20:40:42Z" finished-at="2012-01-31T20:40:42Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>
