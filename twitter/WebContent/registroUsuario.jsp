@@ -5,15 +5,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
+<title>Mini twitter</title>
 </head>
 <body>
-<h1>MY TWITTER</h1>
+<h1>REGISTRO DE USUARIO</h1>
 <hr></hr>
-<hr></hr>
- <a href =./registroUsuario>[Registrar]</a>
- <br></br>
- <a href =./loginUsuario>[Entrar]</a>
+
+
+<form action='./guardarNuevoUsuario' method='get'>
+Nombre: <input type='text' name='nombre' value =''> <br></br>
+Clave: <input type='text' name='clave' value =''> <br></br>
+<input type='submit' value='Registrarse'>
+
+</form>
+
 
 </body>
 </html>
+

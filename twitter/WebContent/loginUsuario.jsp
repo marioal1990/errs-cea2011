@@ -8,12 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>MY TWITTER</h1>
+
+<h1>Bienvenido de nuevo</h1>
 <hr></hr>
-<hr></hr>
- <a href =./registroUsuario>[Registrar]</a>
- <br></br>
- <a href =./loginUsuario>[Entrar]</a>
+
+
+<form action='./entrar' method='get'>
+Nombre: <input type='text' name='nombre' value =''> <br></br>
+Clave: <input type='text' name='clave' value =''> <br></br>
+<input type='submit' value='Entrar'>
+
+</form>
 
 </body>
 </html>
