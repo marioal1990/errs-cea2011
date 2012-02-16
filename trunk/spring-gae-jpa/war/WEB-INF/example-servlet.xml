@@ -22,6 +22,9 @@
 <property name="emf" ref="EMF"></property> 
 </bean>    
 
+<bean id="daoChat" class="com.enjava.chat.DAOChatImpl">
+</bean>
+
 <bean id="daoSaludo" class="com.enjava.web.DAOSaludoImpl"></bean>   <!-- el id es el nombre con el q spring identifica los bean --> 
 <bean id="servicioSaludo" class="com.enjava.web.ServicioSaludoImpl">
 <property name="DAOSaludo" ref="daoSaludoJPA"></property> <!-- ref debe de coincidir con id ya que es el nombre q spring da al bean y name es el nombre q le da java -->
