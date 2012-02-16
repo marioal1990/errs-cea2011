@@ -28,5 +28,9 @@
 		</c:forEach>
 	</ul>
 	
+	<br></br>
+	<br></br>
+	<br></br>
+	<INPUT type="text" value="" name="nombre"/>
 </body>
 </html>
