@@ -13,8 +13,8 @@
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <context:component-scan base-package="com.enjava.web"/> <!--paquete que se escanea  -->
+    <context:component-scan base-package="com.enjava.chat"/> <!--paquete que se escanea  -->
     
-
 
 <!-- arranca entityManagerFactory -->
 <bean id="EMF" class="com.enjava.EMF"></bean>
